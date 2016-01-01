@@ -3,14 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <title>Jarvis</title>
-  <link rel="stylesheet" href="stylesheets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheets/build/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/build/main.css">
 </head>
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-
+      <div class="col-xs-5 offwhite side-bar">
+        <div class="col-xs-12 text-center">
+          <h1>Jarvis</h1>
+          <h5>Your friendly robot assistant</h5>
+        </div>
+        <div class="col-xs-12 text-center">
+          <img class="medium jarvis-img" src="assets/img/jarvis.gif" alt="">
+          <a href="www.voicecommand.herokuapp.com">www.voicecommand.herokuapp.com</a>
+        </div>
+      </div>
+      <div class="col-xs-7 content">
+        <code><h1>Jarvis File Structure</h1></code>
+        <p>
+          <code>To run, simply run grunt dev in the root folder of the repo</code><br>
+          <code>Please ensure you have nodejs, babel, webpack, and electron already installed</code>
+        </p>
+        <code>
+          ├── <a href="docs/Gruntfile.html">Gruntfile.js</a><br>
+          ├── app<br>
+          │   ├── assets<br>
+          │   │   ├── audio<br>
+          │   │   ├── icons<br>
+          │   │   └── img<br>
+          │   ├── audioCTRL<br>
+          │   │   └── <a href="docs/audio.html">audio.js</a><br>
+          │   ├── bashCTRL<br>
+          │   │   └── <a href="docs/execShellCommand.html">execShellCommand.js</a><br>
+          │   ├── commandsCTRL<br>
+          │   │   ├── <a href="docs/buildCommands.html">buildCommands.js</a><br>
+          │   │   ├── <a href="docs/commandsCTRL.html">commandsCTRL.js</a><br>
+          │   │   ├── <a href="docs/phrases.html">phrases.js</a><br>
+          │   │   ├── <a href="docs/saveAndWrite.html">saveAndWrite.js</a><br>
+          │   │   └── <a href="docs/updateCommands.html">updateCommands.js</a><br>
+          │   ├── configCTRL<br>
+          │   │   ├── config-dev.json<br>
+          │   │   ├── config.json<br>
+          │   │   └── <a href="docs/configUtils.html">configUtils.js</a><br>
+          │   ├── index.html<br>
+          │   ├── listenerCTRL<br>
+          │   │   ├── <a href="docs/cmdRec.html">cmdRec.js</a><br>
+          │   │   ├── <a href="docs/listener.html">listener.js</a><br>
+          │   │   ├── <a href="docs/prefixRec.html">prefixRec.js</a><br>
+          │   │   └── <a href="docs/speechRecognition.html">speechRecognition.js</a><br>
+          │   ├── matchCTRL<br>
+          │   │   ├── <a href="docs/formatVariable.html">formatVariable.js</a><br>
+          │   │   ├── <a href="docs/matchCtrl.html">matchCtrl.js</a><br>
+          │   │   ├── <a href="docs/matchingUtil.html">matchingUtil.js</a><br>
+          │   │   ├── <a href="docs/parseCommands.html">parseCommands.js</a><br>
+          │   │   ├── <a href="docs/prefixTrie.html">prefixTrie.js</a><br>
+          │   │   ├── <a href="docs/regMatch.html">regMatch.js</a><br>
+          │   │   └── testers<br>
+          │   │       ├── <a href="docs/JWDTest.html">JWDTest.js</a><br>
+          │   │       ├── <a href="docs/getMatchByScore.html">getMatchByScore.js</a><br>
+          │   │       ├── index.html<br>
+          │   │       ├── <a href="docs/phoneticsTest.html">phoneticsTest.js</a><br>
+          │   │       └── <a href="docs/testCommands.html">testCommands.js</a><br>
+          │   ├── packages<br>
+          │   │   ├── commands-phrases.json<br>
+          │   │   ├── commands.json<br>
+          │   │   └── <a href="docs/core-utils.html">core-utils.js</a><br>
+          │   ├── utils<br>
+          │   │   ├── <a href="docs/loaders.html">loaders.js</a><br>
+          │   │   ├── <a href="docs/phraseTrie.html">phraseTrie.js</a><br>
+          │   │   └── <a href="docs/utils.html">utils.js</a><br>
+          │   └── views<br>
+          │       ├── dev<br>
+          │       │   ├── actions<br>
+          │       │   │   └── <a href="docs/actions.html">actions.js</a><br>
+          │       │   ├── components<br>
+          │       │   │   ├── about<br>
+          │       │   │   │   └── <a href="docs/about.html">about.js</a><br>
+          │       │   │   ├── <a href="docs/appContainer.html">appContainer.js</a><br>
+          │       │   │   ├── contact<br>
+          │       │   │   │   └── <a href="docs/contact.html">contact.js</a><br>
+          │       │   │   ├── landing<br>
+          │       │   │   │   └── <a href="docs/landing.html">landing.js</a><br>
+          │       │   │   ├── layout<br>
+          │       │   │   │   └── <a href="docs/layout.html">layout.js</a><br>
+          │       │   │   ├── packages<br>
+          │       │   │   │   ├── <a href="docs/commandsTable.html">commandsTable.js</a><br>
+          │       │   │   │   └── <a href="docs/packages.html">packages.js</a><br>
+          │       │   │   └── settings<br>
+          │       │   │       └── <a href="docs/settings.html">settings.js</a><br>
+          │       │   ├── constants
+          │       │   │   └── <a href="docs/constants.html">constants.js</a><br>
+          │       │   ├── dispatchers<br>
+          │       │   │   └── <a href="docs/dispatcher.html">dispatcher.js</a><br>
+          │       │   ├── <a href="docs/main.html">main.js</a><br>
+          │       │   ├── mixins<br>
+          │       │   │   └──<a href="docs/mixins.html"> mixins.js</a><br>
+          │       │   └── stores<br>
+          │       │       ├── <a href="docs/store.html">store.js</a><br>
+          │       │       └── <a href="docs/storeActions.html">storeActions.js</a><br>
+          │       └── dist<br>
+          ├── <a href="docs/main.html">main.js</a><br>
+          ├── test<br>
+          │   ├── <a href="docs/commands-util.spec.html">commands-util.spec.js</a><br>
+          │   ├── <a href="docs/matching.spec.html">matching.spec.js</a><br>
+          │   ├── <a href="docs/parsing.spec.html">parsing.spec.js</a><br>
+          │   ├── <a href="docs/phraseTrie.spec.html">phraseTrie.spec.js</a><br>
+          │   └── tmp<br>
+          │       ├── commands-phrases.json<br>
+          │       ├── commands.js<br>
+          │       ├── commands.js<br>
+          │       ├── matching-test-cases.js<br>
+          │       ├── phrases-tmp.js<br>
+          │       ├── phrases.json<br>
+          │       └── test.json<br>
+          └── <a href="docs/webpack.config.html">webpack.config.js</a><br>
+        </code>
+        <p>
+          Get the code <a href="https://github.com/UncomfortableEggnog/Jarvis">Here</a>
+        </p>
       </div>
     </div>
   </div>
