@@ -1,0 +1,37 @@
+.navbar {
+  background-color: $blue;
+  border-radius: 0px;
+  height: 60px;
+  margin: 0;
+  color: white;
+  .buttons-group {
+    display: inline;
+    .buttons {
+      padding-top: 5px;
+      #home {
+        height: 85%;
+        .img-icon {
+          padding-left:10px;
+        }
+        .nav-text {
+          color: white;
+        }
+      }
+      #packages {
+        @extend #home;
+      }
+      #settings {
+        @extend #home;
+      }
+      #about {
+        @extend #home;
+      }
+      #contact {
+        @extend #home;
+      }
+      .button-right {
+        float: right;
+      }
+    }
+  }
+}
