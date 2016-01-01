@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif; }
+  body .container, body body, body .row {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0; }
+  body .offwhite {
+    background-color: #EBECE7;
+    height: 100vh; }
+  body .medium {
+    height: 250px; }
+  body .jarvis-img {
+    padding-left: 10px; }
+  body .side-bar {
+    overflow: hidden; }
+  body .content {
+    height: 100vh;
+    overflow: auto; }
+
+/*# sourceMappingURL=main.css.map */
