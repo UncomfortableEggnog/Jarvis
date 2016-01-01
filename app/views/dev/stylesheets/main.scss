@@ -1,0 +1,13 @@
+$blue: #343D5C;
+$bluegray: #706D78;
+$gray: #9F9F9F;
+$offwhite: #EBECE7;
+$darkergray: #7A7770;
+
+@import 'bootstrap-sass-3.3.6/assets/stylesheets/bootstrap';
+@import 'base/base';
+@import 'components/all';
+// 
+// * {
+//   border: 1px solid red;
+// }

@@ -1,0 +1,118 @@
+        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webkit</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<!--   <button>Say Hello World</button>
+  <button>7805333</button>
+  <button>search google cats and dogs</button>
+  <button>check weather in san francisco</button>
+  <button>shutdown in 30</button>
+  <button>ten times five phrases</button> -->
+
+
+  <button>kyle cho pro tip</button>
+  <button>how are you doing</button>
+  <button>check the weather in San Francisco</button>
+  <button>dim screen</button>
+  <button>open sublime</button>
+  <button>call kyle cho</button>
+  <button>dance for me</button>
+  <button>how do i get to san francsico</button>
+  <button>tell me a funny joke</button>
+  <button>dance yourself clean</button>
+  <button>when is my dentist appointment</button>
+  <button>erase my browser history</button>
+  <button>enhance</button>
+  <button>dehance</button>
+  <button>say pro tip</button>
+  <button>jump at the chance</button>
+  <button>reach for the sky</button>
+  <button>don't die on me</button>
+  <button>Jarvis</button>
+
+  <p id="print">Print to screen</p>
+  <p id="save">Save to file</p>
+  <p id="json"></p>
+
+  <script>
+  (function(console){
+    console.save = function(data, filename){
+      if(!data) {
+        console.error('Console.save: No data')
+        return;
+      }
+      if(!filename) filename = 'test-suite.json'
+      if(typeof data === "object"){
+        data = JSON.stringify(data, undefined, 4)
+      }
+      var blob = new Blob([data], {type: 'text/json'});
+      var e = document.createEvent('MouseEvents');
+      var a = document.createElement('a');
+      a.download = filename;
+      a.href = window.URL.createObjectURL(blob);
+      a.dataset.downloadurl =  ['text/json', a.download, a.href].join(':');
+      e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+      a.dispatchEvent(e);
+     }
+  })(console)
+  //====Web Speech Audio======//
+  var phrases = {
+    "kyle cho pro tip": [],
+    "check the weather in San Francisco" : [],
+    "dim screen" : [],
+    "open sublime" : [],
+    "call kyle cho" : [],
+    "dance for me": [],
+    "tell me a funny joke": [],
+    "dance yourself clean": [],
+    "when is my dentist appointment":[],
+    "how are you doing": [],
+    "erase my browser history": [],
+    "enhance": [],
+    "dehance": [],
+    "say pro tip": [],
+    "jump at the chance": [],
+    "how do i get to san francsico": [],
+    "reach for the sky": [],
+    "don't die on me": [],
+    "Jarvis": []
+  };
+  if (!('webkitSpeechRecognition' in window)) {
+    upgrade();
+  } else {
+    var recognition = new webkitSpeechRecognition();
+    recognition.onresult = function(event) {
+      record({
+        score: event.results[0][0].confidence,
+        term: event.results[0][0].transcript
+      });
+    };
+  }
+  var button = $('button');
+  var recordPhrase = function (p) {
+    return function (event) {
+      phrases[p].push(event);
+    };
+  };
+  var record;
+  $('#print').on('click', function () {
+    console.log('hello');
+    console.log(phrases);
+    $('#json').text(JSON.stringify(phrases));
+  });
+  $('#save').on('click', function () {
+    console.save(phrases);
+  });
+  button.on('click', function () {
+    record = recordPhrase($(this).text());
+    recognition.start();
+  });
+  </script>
+</body>
+</html>

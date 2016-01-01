@@ -1,143 +1,92 @@
-## **Overview**
+# Jarvis v.0.0.1 Beta
 
-Jarvis is an assistant that enables users to speak natural voice commands to their computer in order to help them with a number of common tasks to increase their productivity.
+> Jarvis is a voice command desktop application for Mac OS.  With Jarvis, you can control your computer with your voice.  Jarvis comes with a core command package that lets you adjust volume, brightness, text size, open applications, check the weather, look up documents on Wikipedia, get driving directions, etc.  For a full list of core commands, see [Core Commands](#Core-Commands).
+>
+>
+> Jarvis is fully customizable and extendable.  You can extend Jarvis's capabilities by downloading additional packages on our website at [voicecommand.herokuapp.com](https://voicecommand.herokuapp.com).  Additionally, you can create your own packages on our website, review and rate other packages.   
+>
+>
+> Jarvis has the ability to learn.  If Jarvis cannot find an exact match to your voice command, Jarvis will attempt to find a close match and then ask for confirmation.  If you say "yes", Jarvis will remember that you say the voice command in this way.  
 
-## **Taking a look at Jarvis’ features**
+## Team
 
-Below, you’ll find the list of options Jarvis provides and a high level description of what you’ll find in each section.
+- __Product Owner__: Mitchell Wilcox
+- __Scrum Master__: Tracy Duong
+- __Development Team Members__: Andres Morales, Yilen Pan
 
-![Home Section](https://www.dropbox.com/s/tu9h13owhx6jgtn/Screen%20Shot%202015-12-29%20at%2010.47.53%20AM.png?dl=1)
+## Table of Contents
 
-### **Home**
+1. [Usage](#Usage)
+    1. [Core Commands](#Core Commands)
+    1. [Getting Started](#Getting Started)
+1. [Development](#development)
+    1. [Requirements](#requirements)
+    1. [Installing Dependencies](#installing-dependencies)
+1. [Team](#team)
+1. [Contributing](#contributing)
 
-Start giving voice commands to Jarvis to get started.
+## Usage
 
-### **Packages**
+### Core Commands
+ The following commands come with Jarvis's core package.
+<pre><code>
+ say &ltphrase>
+ enhance
+ zoom in
+ zoom out
+ dehance
+ what time is it?
+ what's todays date
+ check the weather in &ltplace>
+ dim screen
+ bright screen
+ volume down
+ volume up
+ volume off
+ youtube &ltsearch query>
+ google &ltsearch query>
+ wiki &ltsearch query>
+ directions from &ltplace> to &ltplace>
+ open &ltapplication name>
+ turn volume up by &lt0-100> percent
+</code></pre>
 
-Find a list of existing voice commands and the corresponding command that will be executed. You’ll also find that Jarvis provides incredible flexibility which allows you to customize the existing commands, add new commands and add new packages.
+### Getting Started
 
+Download and install Jarvis Voice Command Desktop Application by visiting [voicecommand.herokuapp.com](http://voicecommand.herokuapp.com).
 
-Take a look at the **[Commands and Packages](#commandPackages)** section for more details.
+Once you've opened the application, Jarvis constantly listens for his name in the background.  Activate the command listener by saying "Jarvis" (you can customize his name in Settings.)  Listen for the bleep confirmation then say a command.
 
-### **Settings**
+Example:
 
-Customize Jarvis’ default configuration to match your preferences. Take a look at the **[Settings and Configuration](#settingsConfiguration)** section for more details about each option.
+<pre><code>Jarvis
+</code></pre>
 
-### **Contact**
+Listen for the bleep confirmation
 
-Here you can find how to contact us if you have any suggestions to improve the application or if you need assistance with Jarvis.
+<pre><code>What time is it?
+</code></pre>
 
-### **About**
+For additional usage information, see our [How To Use](link to Andres's doc) guide
 
-If you want to know more about us, visit the **About** section.
+## Development
 
-##Getting Started with Jarvis <a id="gettingStarted"></a>
+### Requirements
 
-Welcome! You’ve installed Jarvis in your computer. Now it’s time for Jarvis to help you with a number of tasks you do on a regular basis.
+- Electron v0.35.4
+- Node 0.10.x
 
-This guide will help you get started in a few minutes so that you can start enjoying the benefits of having Jarvis installed.
 
-**1. Launch the application**
+### Installing Dependencies
 
-Navigate to your Applications folder or the folder where Jarvis was installed and double click it. You can also use Spotlight Search to search for Jarvis in your computer. Press **Command + Space** and type the name of the application. When it pops up, press enter.
+From within the project root directory:
 
-![Spotlight](https://www.dropbox.com/s/00biqwwq9s1kxy3/Screen%20Shot%202015-12-29%20at%2011.24.01%20AM.png?dl=1)
+```sh
+sudo npm install -g bower
+npm install
+bower install
+```
 
-**2. Give Jarvis a voice command**
+## Contributing
 
-Jarvis sits in the background, waiting to get called when you need him. After you launch the application, you’ll see the application’s homepage and a tray icon which indicates Jarvis started listening for your voice commands.
-
-
-![Tray Icon](https://www.dropbox.com/s/agxtz4l1j6gyx93/Screen%20Shot%202015-12-29%20at%203.12.30%20PM.png?dl=1)
-
-
-Jarvis comes with a list of default voice commands. Take a look at Appendix A for a complete list. You can also check the Packages section to see some of these out of the box voice commands.
-
-## **Guides and Tutorials**
-
-Now that you’ve browsed Jarvis’ features, you can start customizing Jarvis using these guides and tutorials
-
-
-# **Commands and Packages** <a id="commandPackages"></a>
-
-### **Add a command** <a id="addCommand"></a>
-
-Jarvis provides the option to manually add new voice commands with its corresponding bash command to the application. To do this, follow the steps below:
-
-1. Launch the application. Refer to the **[Getting Started](#gettingStarted)** section for more information.
-
-2. Navigate to the **Packages** section of the application by clicking the **Packages** button. ![packages button](https://www.dropbox.com/s/jl4bdr4ih67itp2/Screen%20Shot%202015-12-29%20at%203.13.43%20PM.png?dl=1)
-
-3. Once you’re in the **Packages** section, click the **+** symbol on the top right corner. ![plus button](https://www.dropbox.com/s/0ts2ld6d5yen23b/Screen%20Shot%202015-12-29%20at%203.16.07%20PM.png?dl=1)
-
-4. After you click the **+** symbol, you’ll see a new empty field added at the end of the **Commands** table. Add the **voice command** in the **command** field and the **bash command** in the **action** field. ![add command field](https://www.dropbox.com/s/7gqtkqfvyxydwkl/Screen%20Shot%202015-12-29%20at%203.54.24%20PM.png?dl=1)
-
-  Below you can find an example of how this would look like:
-  ![new command](https://www.dropbox.com/s/75bv011gxd1g9ns/Screen%20Shot%202015-12-29%20at%203.57.47%20PM.png?dl=1)
-
-### **Delete a command**
-
-If a command is no longer useful for you, you can delete it from the list of commands by following these steps:
-
-1. Launch the application. Refer to the **[Getting Started](#gettingStarted)** section for more information.
-
-2. Navigate to the **Packages** section of the application by clicking the **Packages** button as explained in the **[Add a command](#addCommand)** section.
-
-3. Click the **X** icon next to the command you want to delete.
-![delete](https://www.dropbox.com/s/c5u386ces5fh9cz/Screen%20Shot%202015-12-29%20at%203.31.59%20PM.png?dl=1)
-
-### **Load a package**
-
-When you need to add a set of commands, Jarvis provides a feature that allows you to load a package to the application.
-
-A **package** is a JSON file that contains the voice command and its corresponding bash command.
-
-To load a package to the application, follow these steps:
-
-1. Launch the application. Refer to the **[Getting Started](#gettingStarted)** section for more information.
-
-2. Navigate to the **Packages** section of the application by clicking the **Packages** button as explained in the **[Add a command](#addCommand)** section.
-
-3. Click the **Load Package** button on the bottom right corner of the **Packages** section. ![load package button](https://www.dropbox.com/s/jtjzi2hhieey8dm/Screen%20Shot%202015-12-29%20at%203.47.52%20PM.png?dl=1)
-
-4. Search and select the JSON file you want to load and click **Open**.
-
-**NOTE:** The commands in the JSON file won't be displayed in the **Commands** table.
-
-# **Settings and Configuration** <a id="settingsConfiguration"></a>
-
-Jarvis' settings allow you to customize the default configuration to match your needs.
-
-### **Change Jarvis's name**
-
-The default name the application responds to is **Jarvis**. However, this can be customized to any name you want. To do this, follow these steps:
-
-1. Launch the application. Refer to the **[Getting Started](#gettingStarted)** section for more information.
-
-2. Navigate to the **Settings** section of the application by clicking the **Settings** button. ![settings button](https://www.dropbox.com/s/s5b0aznpzrcmsfn/Screen%20Shot%202015-12-30%20at%2010.30.24%20AM.png?dl=1)
-
-3. Type the new name inside the **Call Name** text box. ![call name](https://www.dropbox.com/s/u3hukehjtdxkeyn/Screen%20Shot%202015-12-30%20at%2010.34.58%20AM.png?dl=1)
-
-4. Click on the **Save** button on the bottom right corner.
-
-Try it out! Instead of Jarvis, call the application by the new name you gave it.
-
-### **Change the voice recognition's thresholds**
-
-In the **Settings** section, you'll find two thresholds:
-
-1. **Exact Matching Threshold:** This threshold determines how similar the speech to text translation has to be with the phrase saved in the application so that it is considered an exact match.
-
-2. **Close Matching Threshold:** Jarvis also has the ability to guess the phrase when there is no exact match. The **Close Matching Threshold** determines how similar it has to be to an existing phrase/command for Jarvis to suggest it.
-
-To change these thresholds, follow the steps below:
-
-1. Launch the application. Refer to the **[Getting Started](#gettingStarted)** section for more information.
-
-2. Navigate to the **Settings** section of the application by clicking the **Settings** button. ![settings button](https://www.dropbox.com/s/s5b0aznpzrcmsfn/Screen%20Shot%202015-12-30%20at%2010.30.24%20AM.png?dl=1)
-
-3. Click on the handle of the threshold you want to modify. ![slider handle](https://www.dropbox.com/s/pmurax1g2qxwez5/Screen%20Shot%202015-12-30%20at%2010.53.48%20AM.png?dl=1)
-
-4. While the handle is being clicked, slide it to the preferred value.
-
-5. Click the **Save** button on the bottom right corner to save the new value of the threshold(s).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
