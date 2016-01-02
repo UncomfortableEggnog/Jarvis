@@ -11,6 +11,7 @@ module.exports.PhraseTrie = function (letter, command) {
   return obj;
 };
 
+
 module.exports.findCommand = function (trie, sentence) {
   var letters = sentence.replace(/[^0-9a-z]/gi, '').split('');
   var command = '';
@@ -32,7 +33,7 @@ module.exports.findCommand = function (trie, sentence) {
 module.exports.addPhrase = function (trie, phrase, command, letters) {
   letters = letters || phrase.replace(/[^0-9a-z]/gi, '').split('');
   var letter = letters[0];
-  var nextPhrase = trie[letter] || null;
+  var nextPhrase = trie.children[letter] || null;
 
   if (letters.length === 0) {
     trie.command = command;
