@@ -1,9 +1,8 @@
+// This listener is continiously listening for it's name
+// once it hear's its name, it will play the startCmd wave file and
+// will call switch()
 var startCmd = require('../audioCTRL/audio').startCmd;
-var failedCmd = require('../audioCTRL/audio').failedCmd;
 var phoneticsTest = require('../matchCTRL/testers/phoneticsTest');
-var regMatch = require('../matchCTRL/regMatch');
-var ipcRenderer = require('electron').ipcRenderer;
-var configUtils = require('../configCTRL/configUtils');
 
 module.exports = function (event) {
   var name = localStorage.getItem('name');

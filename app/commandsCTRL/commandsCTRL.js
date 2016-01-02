@@ -1,5 +1,7 @@
-
-//commandsUtil creates the object where command and phrases are defined
+// ## commandsCTRL
+// commandsCTRL creates the object where command and phrases are defined
+// it contains all of the commands Jarvis will listen for, as well as the phrases
+// that it will try to match
 
 
 var fs = require('fs');
@@ -13,8 +15,7 @@ var addPhrase = require('../utils/phraseTrie').addPhrase;
 var rootPath = localStorage.getItem('appPath');
 
 
-//Saves the command object in localStorage and then fs.writeFiles it.
-
+// Saves the command object in localStorage and then fs.writeFiles it.
 
 module.exports.loadPackage = function (configObj, cb) {
   var commandsPath = configObj.commandsPath;
@@ -47,6 +48,8 @@ module.exports.updateCommands = function (commands, cb) {
     if (err) {
       console.log(err);
     } else {
+      // Returns only the packageCommands for the view layer
+      // it hides the coreUtils
       cb(null, data['packageCommands']);
     }
   });

@@ -1,3 +1,5 @@
+// Jarvis' core commands
+
 module.exports = {
   "say": "say \"<ARG del='\\ ' />\"",
   "enhance": "osascript -e 'tell application \"System Events\"to repeat 2 times' -e 'key code 24 using {command down}' -e 'delay 0.1' -e 'end repeat'",

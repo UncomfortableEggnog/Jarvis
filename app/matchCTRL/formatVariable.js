@@ -8,7 +8,7 @@
 //
 //   EX: formatVariable('check the', 'name of US president') //=> 'name+of+US+president'
 //
-
+// ```
 //test actionObj ==> need to pass this in
 // var actionObj =
 //   {
@@ -64,7 +64,7 @@
 //     }
 
 //   };
-
+// ```
 //===test strings====
 //  phrase = "check the";
 //  variable = "name of US president";
@@ -109,7 +109,7 @@ function buildArgumentSyntax (argStr, argParams) {
 
 
 module.exports = function (actionPrefix, actionObj, variable, commandsObj) {
-  var bash = commandsObj.rawCommands[actionPrefix]; // open http://.....<args/>
+  var bash = commandsObj.rawCommands[actionPrefix];
 
 
   var bashStrs = actionObj["commands"];
@@ -118,11 +118,11 @@ module.exports = function (actionPrefix, actionObj, variable, commandsObj) {
   var argParams = actionObj["args"][0];
 
   //=========Argument Parameter Handling=======
-  //TODO: move argument parameter handling to separate module.
 
 
   //===chainsync case: process this first for potential extra arguments.
   //===chainsync allows for command to be executed multiple times with any number of arguments.
+
   var _action = '';
   if (args[0]['chainsync']) {
     var varArr = variable.split(args[0]['chainkey']);
