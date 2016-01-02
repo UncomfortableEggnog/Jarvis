@@ -57,7 +57,6 @@ module.exports = {
             "term": "dim screen"
         }
     ],
-    "open sublime": [],
     "call kyle cho": [
         {
             "score": 0.8789613842964172,

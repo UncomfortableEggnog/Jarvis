@@ -11,7 +11,6 @@ coreUtils = _.extend(coreUtils, {
   "apps": "apppppp",
   "apd": "sad"
 });
-
 describe('Phrase trie', function (done) {
   var phraseTrie;
   before(function (done) {
@@ -24,6 +23,7 @@ describe('Phrase trie', function (done) {
   it('should fetch known commands', function (done) {
     for (var command in coreUtils) {
       var result = findCommand(phraseTrie, command);
+      console.log('expect ', command, ' to equal ', result);
       expect(result).to.equal(command);
     }
     done();
