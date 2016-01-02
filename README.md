@@ -1,3 +1,17 @@
+## Quick Start:
+- For Dev:
+```
+  npm install -g babel webpack grunt-cli
+  npm install
+  grunt dev
+```
+- To build from source:
+```
+  npm install -g babel webpack grunt-cli
+  npm install
+  grunt build
+```
+
 ## **Overview**
 
 Jarvis is an assistant that enables users to speak natural voice commands to their computer in order to help them with a number of common tasks to increase their productivity.
