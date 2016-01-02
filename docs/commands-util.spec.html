@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -302,11 +297,22 @@
 <span class="hljs-keyword">var</span> sinon = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sinon'</span>);
 <span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 <span class="hljs-keyword">var</span> del = <span class="hljs-built_in">require</span>(<span class="hljs-string">'del'</span>);
-<span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>);
-<span class="hljs-comment">/*
-  mock localStorage
-*/</span>
-GLOBAL.localStorage = {
+<span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>mock localStorage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>GLOBAL.localStorage = {
   storage: {},
   getItem: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.storage[key];
@@ -320,11 +326,22 @@ GLOBAL.localStorage = {
   clear: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">this</span>.storage = {};
   }
-};
-<span class="hljs-comment">/*
-  mock data
-*/</span>
-localStorage.setItem(<span class="hljs-string">'appPath'</span>, __dirname);
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>mock data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>localStorage.setItem(<span class="hljs-string">'appPath'</span>, __dirname);
 <span class="hljs-keyword">var</span> config = {
   <span class="hljs-string">"phrasesPath"</span>: __dirname + <span class="hljs-string">'/tmp/phrases.json'</span>,
   <span class="hljs-string">"commandsPath"</span>: __dirname + <span class="hljs-string">'/tmp/commands.json'</span>,
@@ -337,12 +354,22 @@ localStorage.setItem(<span class="hljs-string">'appPath'</span>, __dirname);
   <span class="hljs-string">" -e 'delay 0.1' -e 'end repeat'"</span>,
   <span class="hljs-string">"woot woot"</span>: <span class="hljs-string">"osascript -e 'tell application \"System Events\""</span> +
   <span class="hljs-string">" to repeat 2 times' -e 'key code 27 using {command down}'"</span> +
-  <span class="hljs-string">" -e 'delay 0.1' -e 'end repeat'"</span> };
+  <span class="hljs-string">" -e 'delay 0.1' -e 'end repeat'"</span> };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>utils</p>
 
-<span class="hljs-comment">/*
-  utils
-*/</span>
-
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
 <span class="hljs-keyword">var</span> commandsUtil = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../app/commandsCTRL/commandsCTRL'</span>);
 <span class="hljs-keyword">var</span> utils = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../app/utils/utils'</span>);
 

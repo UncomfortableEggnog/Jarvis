@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -295,8 +290,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>takes an existing commandObj or builds a new one
-takes the package, and extends it</p>
+              <p>Takes an existing commandObj or builds a new one
+takes the package, and extends it.</p>
 
             </div>
             
@@ -305,9 +300,37 @@ takes the package, and extends it</p>
 <span class="hljs-keyword">var</span> parseCommands = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../matchCTRL/parseCommands'</span>).parseCommands;
 <span class="hljs-keyword">var</span> coreUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../packages/core-utils'</span>);
 
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">packageObj, commandObj</span>) </span>{
-  commandObj = commandObj || {};
-  commandObj.packageCommands = lowerCaseProps(packageObj);
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">packageObj, commandObj</span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Init commandObj</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  commandObj = commandObj || {};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>turn current package’s props to lower case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  commandObj.packageCommands = lowerCaseProps(packageObj);
   commandObj.rawCommands = _.extend(coreUtils, packageObj);
   commandObj.parsedCommands = parseCommands(commandObj.rawCommands);
   <span class="hljs-keyword">return</span> commandObj;

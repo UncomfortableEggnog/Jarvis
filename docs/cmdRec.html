@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -295,10 +290,15 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>command recognition listener
+takes a user supplied voice command and matches it through the matchingUtil
+if it gets an exact match, it executes the action then switches the listener
+to the prefixListener</p>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> commandsUtil = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../commandsCTRL/commandsCTRL'</span>);
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> commandsUtil = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../commandsCTRL/commandsCTRL'</span>);
 <span class="hljs-keyword">var</span> getCommands = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../utils/utils'</span>).getCommands;
 <span class="hljs-keyword">var</span> executeShellCommand = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../bashCTRL/execShellCommand'</span>);
 <span class="hljs-keyword">var</span> startCmd = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../audioCTRL/audio'</span>).startCmd;

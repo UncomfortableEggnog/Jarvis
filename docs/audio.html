@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -295,11 +290,26 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>retrieves cwd from localstorage</p>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> rootPath = localStorage.getItem(<span class="hljs-string">'appPath'</span>);
-<span class="hljs-built_in">module</span>.exports = {
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> rootPath = localStorage.getItem(<span class="hljs-string">'appPath'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>paths for the audio files.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports = {
   startCmd: <span class="hljs-keyword">new</span> Audio(rootPath + <span class="hljs-string">'/app/assets/audio/startCmd.wav'</span>),
   failedCmd: <span class="hljs-keyword">new</span> Audio(rootPath + <span class="hljs-string">'/app/assets/audio/failedCmd.wav'</span>)
 };</pre></div></div>

@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -303,9 +298,7 @@ where properties are added to commandsObj</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-
-<span class="hljs-keyword">var</span> updateCommandObj = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./updateCommands'</span>);
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> updateCommandObj = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./updateCommands'</span>);
 <span class="hljs-keyword">var</span> read = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../utils/utils'</span>).read;
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">commandPath, callback</span>) </span>{
   read(commandPath, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, packageObj</span>) </span>{

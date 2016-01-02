@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -295,14 +290,15 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>passes commands into forloop and matches each command regardless of case</p>
+
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> regMatch = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../regMatch'</span>);
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">phrases, _actionPrefix</span>) </span>{
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> phrase <span class="hljs-keyword">in</span> phrases) {
-    <span class="hljs-keyword">if</span> (regMatch(phrase, _actionPrefix)) {
-      <span class="hljs-keyword">return</span> phrase;
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">commands, _actionPrefix</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> command <span class="hljs-keyword">in</span> commands) {
+    <span class="hljs-keyword">if</span> (regMatch(command, _actionPrefix)) {
+      <span class="hljs-keyword">return</span> command;
     };
   }
   <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
