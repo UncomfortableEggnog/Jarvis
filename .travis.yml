@@ -5,3 +5,5 @@ install: npm install --production
 node_js:
   - "4.1"
   - "4.0"
+env:
+  - NODE_ENV=test
