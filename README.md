@@ -1,5 +1,5 @@
 # Jarvis v.0.0.1 Beta
-
+![Build Status](https://api.travis-ci.org/UncomfortableEggnog/Jarvis.svg?branch=master)
 ## Quick Start:
 - For Dev:
 ```
