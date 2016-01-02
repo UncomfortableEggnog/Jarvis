@@ -1,13 +1,14 @@
 # Jarvis v.0.0.1 Beta
 
-Quick Start:
+## Quick Start:
+- For Dev:
 ```
-# For Dev:
   npm install -g babel webpack grunt-cli
   npm install
   grunt dev
-
-# To build from source:
+```
+- To build from source:
+```
   npm install -g babel webpack grunt-cli
   npm install
   grunt build
