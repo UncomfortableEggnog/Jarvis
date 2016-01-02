@@ -62,7 +62,7 @@ that the right environment variables are in place.
 ### Development work flow
 
 In order to run Jarvis in a dev environment, run `grunt dev`. This will run webpack
-and will ensure that the right environment variables are in place. 
+and will ensure that the right environment variables are in place.
 
 ### Make commits to your feature branch.
 
@@ -154,7 +154,7 @@ Thanks for contributing!
 1. Uphold the current code standard:
     - Keep your code [DRY][].
     - Apply the [boy scout rule][].
-    - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
+    - Follow [STYLE-GUIDE.md](https://github.com/UncomfortableEggnog/Jarvis/blob/master/STYLE_GUIDE.md)
 1. Run the [tests][] before submitting a pull request.
 1. Tests are very, very important. Submit tests if your pull request contains
    new, testable behavior.

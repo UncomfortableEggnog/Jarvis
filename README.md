@@ -21,10 +21,10 @@
 > Jarvis is a voice command desktop application for Mac OS.  With Jarvis, you can control your computer with your voice.  Jarvis comes with a core command package that lets you adjust volume, brightness, text size, open applications, check the weather, look up documents on Wikipedia, get driving directions, etc.  For a full list of core commands, see [Core Commands](#Core-Commands).
 >
 >
-> Jarvis is fully customizable and extendable.  You can extend Jarvis's capabilities by downloading additional packages on our website at [voicecommand.herokuapp.com](https://voicecommand.herokuapp.com).  Additionally, you can create your own packages on our website, review and rate other packages.   
+> Jarvis is fully customizable and extendable.  You can extend Jarvis's capabilities by downloading additional packages on our website at [voicecommand.herokuapp.com](https://voicecommand.herokuapp.com).  Additionally, you can create your own packages on our website, review and rate other packages.
 >
 >
-> Jarvis has the ability to learn.  If Jarvis cannot find an exact match to your voice command, Jarvis will attempt to find a close match and then ask for confirmation.  If you say "yes", Jarvis will remember that you say the voice command in this way.  
+> Jarvis has the ability to learn.  If Jarvis cannot find an exact match to your voice command, Jarvis will attempt to find a close match and then ask for confirmation.  If you say "yes", Jarvis will remember that you say the voice command in this way.
 
 ## Team
 
@@ -85,7 +85,7 @@ Listen for the bleep confirmation
 <pre><code>What time is it?
 </code></pre>
 
-For additional usage information, see our [How To Use](link to Andres's doc) guide
+For additional usage information, see our [How To Use](https://github.com/UncomfortableEggnog/Jarvis/blob/master/Jarvis%20How%20To.md) guide
 
 ## Development
 
