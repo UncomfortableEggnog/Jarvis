@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -301,15 +296,56 @@
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 <span class="hljs-keyword">var</span> utils = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../utils/utils'</span>);
 <span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>);
-<span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
-<span class="hljs-keyword">var</span> rootPath = localStorage.getItem(<span class="hljs-string">'appPath'</span>);
-<span class="hljs-keyword">if</span> (process.env.NODE_ENV === <span class="hljs-string">'DEV'</span>) {
+<span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Gets cwd from local storage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> rootPath = localStorage.getItem(<span class="hljs-string">'appPath'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>if dev, reads from dev config</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">if</span> (process.env.NODE_ENV === <span class="hljs-string">'DEV'</span>) {
   <span class="hljs-keyword">var</span> configPath = rootPath + <span class="hljs-string">'/app/configCTRL/config-dev.json'</span>;
 } <span class="hljs-keyword">else</span> {
   <span class="hljs-keyword">var</span> configPath = rootPath + <span class="hljs-string">'/app/configCTRL/config.json'</span>;
-}
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>reads file from configPath</p>
 
-<span class="hljs-keyword">var</span> getConfig = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cb</span>) </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> getConfig = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cb</span>) </span>{
   fs.readFile(configPath, <span class="hljs-string">'utf8'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, data</span>) </span>{
     <span class="hljs-keyword">if</span> (err) {
       cb(err);

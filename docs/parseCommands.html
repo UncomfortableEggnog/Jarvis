@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -295,50 +290,56 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>/**</p>
-<ul>
-<li>parseCommands takes in one object of rawCommand’s (key) and bash commands (value), and</li>
-<li>returns an object with an exact command object and an object that holds commands</li>
-<li>with parsed arguments and options.</li>
-<li>===========</li>
-<li>Example functionality</li>
-<li>input:</li>
-<li>{</li>
-<li>“check the”: “open https//www.google.com/?gws_rd=ssl#q=<ARG del='+'>“,               //single argument command</li>
-<li>“open”: “open <ARG del='\\ ' capitalize=true chain=true chainkey='and also'/>.app”,  //single argument command with chaining</li>
-<li>“kyle cho pro tip”: “say kyle cho pro tip”                                           //exact command</li>
-<li>}</li>
-<li>output:</li>
-<li>{</li>
-<li>“exactCommands”:</li>
-<li>{</li>
-<li>“kyle cho pro tip”: “say kyle cho pro tip”</li>
-<li>},
-*</li>
-<li>“argCommands”:</li>
-<li>{</li>
-<li>“check the”: {</li>
-<li>“commands”: [“open https//www.google.com/?gws_rd=ssl#q=”],</li>
-<li>“args”: [{</li>
-<li>“del”: “+”</li>
-<li>}]</li>
-<li>},</li>
-<li>“open”: {</li>
-<li>“commands”: [“open “, “.app”],</li>
-<li>“args”: [{</li>
-<li>“del”: “\ “,</li>
-<li>“capitalize”: true</li>
-<li>}]</li>
-<li>}</li>
-<li>}
-*</li>
-<li>For argCommands, the hardcoded bash strings are listed as an array</li>
-<li>under the “commands” property.  Upon execution, arguments in the</li>
-<li>args array are injected in between each string (bash commands will</li>
-<li>always start with the hardcoded string, never an argument).
-<em>
-</em>/</li>
-</ul>
+              <p>parseCommands takes in one object of rawCommand’s (key) and bash commands (value), and
+returns an object with an exact command object and an object that holds commands</p>
+<h1 id="with-parsed-arguments-and-options-">with parsed arguments and options.</h1>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p> Example functionality</p>
+<pre><code> input:
+  {
+   <span class="hljs-string">"check the"</span>: <span class="hljs-string">"open https//www.google.com/?gws_rd=ssl#q=&lt;ARG del='+'&gt;"</span>,               <span class="hljs-comment">//single argument command</span>
+   <span class="hljs-string">"open"</span>: <span class="hljs-string">"open &lt;ARG del='\\ ' capitalize=true chain=true chainkey='and also'/&gt;.app"</span>,  <span class="hljs-comment">//single argument command with chaining</span>
+   <span class="hljs-string">"kyle cho pro tip"</span>: <span class="hljs-string">"say kyle cho pro tip"</span>                                           <span class="hljs-comment">//exact command</span>
+  }
+ output:
+  {
+   <span class="hljs-string">"exactCommands"</span>:
+    {
+      <span class="hljs-string">"kyle cho pro tip"</span>: <span class="hljs-string">"say kyle cho pro tip"</span>
+    },
+
+   <span class="hljs-string">"argCommands"</span>:
+    {
+     <span class="hljs-string">"check the"</span>: {
+       <span class="hljs-string">"commands"</span>: [<span class="hljs-string">"open https//www.google.com/?gws_rd=ssl#q="</span>],
+       <span class="hljs-string">"args"</span>: [{
+         <span class="hljs-string">"del"</span>: <span class="hljs-string">"+"</span>
+       }]
+     },
+     <span class="hljs-string">"open"</span>: {
+       <span class="hljs-string">"commands"</span>: [<span class="hljs-string">"open "</span>, <span class="hljs-string">".app"</span>],
+       <span class="hljs-string">"args"</span>: [{
+         <span class="hljs-string">"del"</span>: <span class="hljs-string">"\\ "</span>,
+         <span class="hljs-string">"capitalize"</span>: <span class="hljs-literal">true</span>
+       }]
+     }
+    }
+</code></pre><p> For argCommands, the hardcoded bash strings are listed as an array
+ under the “commands” property.  Upon execution, arguments in the
+ args array are injected in between each string (bash commands will
+ always start with the hardcoded string, never an argument).</p>
+<p>/</p>
 
             </div>
             
@@ -357,11 +358,11 @@
         </li>
         
         
-        <li id="section-2">
+        <li id="section-3">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
+                <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <p>Split the phrase into key/value pairs</p>
 
@@ -374,11 +375,11 @@
         </li>
         
         
-        <li id="section-3">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>if value is wrapped in single quotation marks, remove extraneous quotes.
 may not need this detailed of a test if input is exactly JSON format.</p>
@@ -391,11 +392,11 @@ may not need this detailed of a test if input is exactly JSON format.</p>
         </li>
         
         
-        <li id="section-4">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>assign key/value to argument.</p>
 
@@ -423,11 +424,11 @@ may not need this detailed of a test if input is exactly JSON format.</p>
         </li>
         
         
-        <li id="section-5">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>arguments case: add to argCommands object</p>
 

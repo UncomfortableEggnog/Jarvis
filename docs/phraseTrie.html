@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -298,25 +293,30 @@
               
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>);
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>PhraseTrie returns a obj that can be persisted to a JSON.
+It stores children in an object, stores the current letter in .letter
+and if it houses a command, it sets that too.</p>
 
-<span class="hljs-built_in">module</span>.exports.PhraseTrie = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">letter, command</span>) </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports.PhraseTrie = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">letter, command</span>) </span>{
   <span class="hljs-keyword">var</span> obj = {};
   obj.letter = letter || <span class="hljs-literal">null</span>;
   obj.command = command || <span class="hljs-literal">null</span>;
   obj.children = {};
   <span class="hljs-keyword">return</span> obj;
 };
-
-<span class="hljs-keyword">var</span> hasChild = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">trie, letter</span>) </span>{
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> trie.children) {
-    <span class="hljs-keyword">if</span> (key === letter) {
-      <span class="hljs-keyword">return</span> trie.children[key];
-    }
-  }
-  <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
-};
-
 
 <span class="hljs-built_in">module</span>.exports.findCommand = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">trie, sentence</span>) </span>{
   <span class="hljs-keyword">var</span> letters = sentence.replace(<span class="hljs-regexp">/[^0-9a-z]/gi</span>, <span class="hljs-string">''</span>).split(<span class="hljs-string">''</span>);
@@ -331,12 +331,27 @@
   }
   innerFn(trie, letters);
   <span class="hljs-keyword">return</span> command === <span class="hljs-string">''</span> ? <span class="hljs-literal">null</span> : command;
-};
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>loop through all of the letters in the phrase
+at the end of the phrase, set the current trie’s command to the passed in command</p>
 
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
 <span class="hljs-built_in">module</span>.exports.addPhrase = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">trie, phrase, command, letters</span>) </span>{
   letters = letters || phrase.replace(<span class="hljs-regexp">/[^0-9a-z]/gi</span>, <span class="hljs-string">''</span>).split(<span class="hljs-string">''</span>);
   <span class="hljs-keyword">var</span> letter = letters[<span class="hljs-number">0</span>];
-  <span class="hljs-keyword">var</span> nextPhrase = hasChild(trie, letter);
+  <span class="hljs-keyword">var</span> nextPhrase = trie[letter] || <span class="hljs-literal">null</span>;
 
   <span class="hljs-keyword">if</span> (letters.length === <span class="hljs-number">0</span>) {
     trie.command = command;

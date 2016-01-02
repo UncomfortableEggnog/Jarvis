@@ -140,11 +140,6 @@
                 </a>
               
                 
-                <a class="source" href="loaders.html">
-                  loaders.js
-                </a>
-              
-                
                 <a class="source" href="phraseTrie.html">
                   phraseTrie.js
                 </a>
@@ -295,15 +290,14 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>This listener is continiously listening for it’s name
+once it hear’s its name, it will play the startCmd wave file and
+will call switch()</p>
+
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> startCmd = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../audioCTRL/audio'</span>).startCmd;
-<span class="hljs-keyword">var</span> failedCmd = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../audioCTRL/audio'</span>).failedCmd;
 <span class="hljs-keyword">var</span> phoneticsTest = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../matchCTRL/testers/phoneticsTest'</span>);
-<span class="hljs-keyword">var</span> regMatch = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../matchCTRL/regMatch'</span>);
-<span class="hljs-keyword">var</span> ipcRenderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'electron'</span>).ipcRenderer;
-<span class="hljs-keyword">var</span> configUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../configCTRL/configUtils'</span>);
 
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
   <span class="hljs-keyword">var</span> name = localStorage.getItem(<span class="hljs-string">'name'</span>);
