@@ -1,4 +1,9 @@
 # Jarvis v.0.0.1 Beta ![Build Status](https://api.travis-ci.org/UncomfortableEggnog/Jarvis.svg?branch=master)
+
+## Download
+
+[Jarvis-v0.0.1.dmg](https://s3-us-west-1.amazonaws.com/jarvis-v0.0.1.beta-release/Jarvis-v0.0.1.dmg)
+
 ## Quick Start:
 - For Dev:
 ```
@@ -88,7 +93,7 @@ Listen for the bleep confirmation
 For additional usage information, see our [How To Use](https://github.com/UncomfortableEggnog/Jarvis/blob/master/Jarvis%20How%20To.md) guide
 
 ## Development
-
+u
 ### Requirements
 
 - Electron v0.35.4
