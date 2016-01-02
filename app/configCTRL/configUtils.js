@@ -2,13 +2,16 @@ var fs = require('fs');
 var utils = require('../utils/utils');
 var _ = require('underscore');
 var path = require('path');
+// Gets cwd from local storage
 var rootPath = localStorage.getItem('appPath');
+// if dev, reads from dev config
 if (process.env.NODE_ENV === 'DEV') {
   var configPath = rootPath + '/app/configCTRL/config-dev.json';
 } else {
   var configPath = rootPath + '/app/configCTRL/config.json';
 }
 
+// reads file from configPath
 var getConfig = function (cb) {
   fs.readFile(configPath, 'utf8', function (err, data) {
     if (err) {

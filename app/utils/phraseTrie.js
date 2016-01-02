@@ -1,5 +1,8 @@
 var _ = require('underscore');
 
+// PhraseTrie returns a obj that can be persisted to a JSON.
+// It stores children in an object, stores the current letter in .letter
+// and if it houses a command, it sets that too.
 module.exports.PhraseTrie = function (letter, command) {
   var obj = {};
   obj.letter = letter || null;
@@ -7,16 +10,6 @@ module.exports.PhraseTrie = function (letter, command) {
   obj.children = {};
   return obj;
 };
-
-var hasChild = function (trie, letter) {
-  for (var key in trie.children) {
-    if (key === letter) {
-      return trie.children[key];
-    }
-  }
-  return null;
-};
-
 
 module.exports.findCommand = function (trie, sentence) {
   var letters = sentence.replace(/[^0-9a-z]/gi, '').split('');
@@ -33,10 +26,13 @@ module.exports.findCommand = function (trie, sentence) {
   return command === '' ? null : command;
 };
 
+// loop through all of the letters in the phrase
+// at the end of the phrase, set the current trie's command to the passed in command
+
 module.exports.addPhrase = function (trie, phrase, command, letters) {
   letters = letters || phrase.replace(/[^0-9a-z]/gi, '').split('');
   var letter = letters[0];
-  var nextPhrase = hasChild(trie, letter);
+  var nextPhrase = trie[letter] || null;
 
   if (letters.length === 0) {
     trie.command = command;

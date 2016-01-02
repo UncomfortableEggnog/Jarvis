@@ -4,12 +4,12 @@ var getCommands = require('../utils/utils').getCommands;
 
 
 //
-// saveAndWrite
+// ### saveAndWrite
 //
 // First write commandsObj to localStorage, then persist it by writing to json
 //
-// @param {object} commandsObj - parsedCommands, phrases, rawCommands, paths
-// @param {function} cb - callback
+// - @param {object} commandsObj - parsedCommands, phrases, rawCommands, paths
+// - @param {function} cb - callback
 //
 
 module.exports = function (commandsObj, cb) {

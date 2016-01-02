@@ -1,3 +1,8 @@
+// command recognition listener
+// takes a user supplied voice command and matches it through the matchingUtil
+// if it gets an exact match, it executes the action then switches the listener
+// to the prefixListener
+
 var commandsUtil = require('../commandsCTRL/commandsCTRL');
 var getCommands = require('../utils/utils').getCommands;
 var executeShellCommand = require('../bashCTRL/execShellCommand');

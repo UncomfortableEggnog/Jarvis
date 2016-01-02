@@ -3,9 +3,7 @@ var sinon = require('sinon');
 var fs = require('fs');
 var del = require('del');
 var _ = require('underscore');
-/*
-  mock localStorage
-*/
+// mock localStorage
 GLOBAL.localStorage = {
   storage: {},
   getItem: function (key) {
@@ -21,9 +19,8 @@ GLOBAL.localStorage = {
     this.storage = {};
   }
 };
-/*
-  mock data
-*/
+
+// mock data
 localStorage.setItem('appPath', __dirname);
 var config = {
   "phrasesPath": __dirname + '/tmp/phrases.json',
@@ -39,9 +36,7 @@ var extraCommands = {
   " to repeat 2 times' -e 'key code 27 using {command down}'" +
   " -e 'delay 0.1' -e 'end repeat'" };
 
-/*
-  utils
-*/
+// utils
 
 var commandsUtil = require('../app/commandsCTRL/commandsCTRL');
 var utils = require('../app/utils/utils');

@@ -1,8 +1,9 @@
+// passes commands into forloop and matches each command regardless of case
 var regMatch = require('../regMatch');
-module.exports = function (phrases, _actionPrefix) {
-  for (var phrase in phrases) {
-    if (regMatch(phrase, _actionPrefix)) {
-      return phrase;
+module.exports = function (commands, _actionPrefix) {
+  for (var command in commands) {
+    if (regMatch(command, _actionPrefix)) {
+      return command;
     };
   }
   return null;

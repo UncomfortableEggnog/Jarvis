@@ -7,8 +7,6 @@
 // @param {string} variable -  description
 // @return {string}
 //
-
-
 var updateCommandObj = require('./updateCommands');
 var read = require('../utils/utils').read;
 module.exports = function (commandPath, callback) {
