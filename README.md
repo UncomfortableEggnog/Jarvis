@@ -100,9 +100,9 @@ For additional usage information, see our [How To Use](link to Andres's doc) gui
 From within the project root directory:
 
 ```sh
-sudo npm install -g bower
+sudo npm install -g grunt-cli webpack
 npm install
-bower install
+grunt build
 ```
 
 ## Contributing
