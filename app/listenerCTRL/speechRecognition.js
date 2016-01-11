@@ -4,6 +4,8 @@
 // the config file, then kick off the prefixListener
 
 var ipcRenderer = require('electron').ipcRenderer;
+// retrieve cwd from electron and set that to our current Path
+localStorage.setItem('appPath', ipcRenderer.sendSync('getPath'));
 var listener = require('./listenerCTRL/listener');
 var prefixRec = require('./listenerCTRL/prefixRec');
 var cmdRec = require('./listenerCTRL/cmdRec');
@@ -29,9 +31,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
 ipcRenderer.on('listening', function (event) {
   // clear localStorage
-  localStorage.clear();
-  // retrieve cwd from electron and set that to our current Path
-  localStorage.setItem('appPath', ipcRenderer.sendSync('getPath'));
+  //localStorage.clear();
   var commandsUtil = require('./commandsCTRL/commandsCTRL');
   var configUtils = require('./configCTRL/configUtils');
   // retrieves config.json
