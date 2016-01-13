@@ -1,8 +1,8 @@
-# Jarvis v.0.0.1 Beta ![Build Status](https://api.travis-ci.org/UncomfortableEggnog/Jarvis.svg?branch=master)
+# Jarvis v.0.0.2 Beta ![Build Status](https://api.travis-ci.org/UncomfortableEggnog/Jarvis.svg?branch=master)
 
 ## Download
 
-[Jarvis-v0.0.1.dmg](https://s3-us-west-1.amazonaws.com/jarvis-v0.0.1.beta-release/Jarvis-v0.0.1.dmg)
+[Jarvis-v0.0.2.dmg](https://s3-us-west-1.amazonaws.com/jarvis-v0.0.1.beta-release/Jarvis-v0.0.2.dmg)
 
 ## Quick Start:
 - For Dev:
