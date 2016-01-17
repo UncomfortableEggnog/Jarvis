@@ -18,5 +18,5 @@ module.exports = {
   "google": "open https://www.google.com/?gws_rd=ssl#q=<ARG del='+' />",
   "wiki": "open https://en.wikipedia.org/wiki/<ARG del='_' />",
   "directions from": "open https://www.google.com/maps/dir/<ARG del='+' chainkey='to'/>/<ARG del='+' />/",
-  "open": "open <ARG del='\\ ' capitalize=true/>.app"
+  "open": "open /Applications/<ARG del='\\ ' capitalize=true />.app"
 };
